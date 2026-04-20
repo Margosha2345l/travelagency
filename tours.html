@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoyageUA — Тури</title>
+<!-- Сайт розроблено студентом [Ваше ПІБ], група [Ваша група] -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><div class="container header-wrap"><div class="logo">VoyageUA</div><nav><a href="index.html">Головна</a><a href="tours.html">Тури</a><a href="about.html">Про нас</a><a href="contacts.html">Контакти</a></nav></div></header>
+<section class="hero" style="padding:48px 0;">
+  <div class="container">
+    <div class="hero-card">
+      <h1 style="font-size:42px;">Каталог турів</h1>
+      <p>Оберіть тур, дату поїздки, кількість осіб та опцію трансферу. Після цього JavaScript автоматично порахує підсумкову вартість.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="tours-grid">
+      
+<div class="tour-card"><img src="images/karpaty.svg" alt="Карпати"><div class="tour-body"><span class="badge">3 дні / 2 ночі</span><h3>Карпати Weekend</h3><p>Гори, прогулянки, чан та відпочинок від міської метушні.</p><ul class="features"><li>• Проживання в еко-готелі</li><li>• Сніданки включено</li><li>• Екскурсійна програма</li></ul><div class="price">3200 грн / 1 особа</div><button class="btn" onclick="openBooking('Карпати Weekend', 3200)">Забронювати</button></div></div>
+<div class="tour-card"><img src="images/lviv.svg" alt="Львів"><div class="tour-body"><span class="badge">2 дні / 1 ніч</span><h3>Львів історичний</h3><p>Кава, архітектура, екскурсії та атмосфера старого міста.</p><ul class="features"><li>• Пішохідна екскурсія</li><li>• Центр міста</li><li>• Вільний вечір</li></ul><div class="price">2800 грн / 1 особа</div><button class="btn" onclick="openBooking('Львів історичний', 2800)">Забронювати</button></div></div>
+<div class="tour-card"><img src="images/odesa.svg" alt="Одеса"><div class="tour-body"><span class="badge">4 дні / 3 ночі</span><h3>Одеса море</h3><p>Морський відпочинок, прогулянки містом та яскраві враження.</p><ul class="features"><li>• Готель біля моря</li><li>• Вільний час</li><li>• Вечірня екскурсія</li></ul><div class="price">4100 грн / 1 особа</div><button class="btn" onclick="openBooking('Одеса море', 4100)">Забронювати</button></div></div>
+<div class="tour-card"><img src="images/bukovel.svg" alt="Буковель"><div class="tour-body"><span class="badge">3 дні / 2 ночі</span><h3>Буковель Active</h3><p>Активна подорож із підйомниками та панорамними краєвидами.</p><ul class="features"><li>• Курортна зона</li><li>• Активний відпочинок</li><li>• Фото-локації</li></ul><div class="price">5200 грн / 1 особа</div><button class="btn" onclick="openBooking('Буковель Active', 5200)">Забронювати</button></div></div>
+<div class="tour-card"><img src="images/zakarpattya.svg" alt="Закарпаття"><div class="tour-body"><span class="badge">3 дні / 2 ночі</span><h3>Закарпаття Relax</h3><p>Термальні води, дегустації, релакс і спокійний темп подорожі.</p><ul class="features"><li>• Термальні басейни</li><li>• Закарпатська кухня</li><li>• Комфортний трансфер</li></ul><div class="price">4700 грн / 1 особа</div><button class="btn" onclick="openBooking('Закарпаття Relax', 4700)">Забронювати</button></div></div>
+<div class="tour-card"><img src="images/kamianets.svg" alt="Кам’янець"><div class="tour-body"><span class="badge">2 дні / 1 ніч</span><h3>Кам’янець-Подільський</h3><p>Фортеця, каньйон, історія та цікава екскурсійна програма.</p><ul class="features"><li>• Вхідні квитки</li><li>• Історичний маршрут</li><li>• Фото з фортецею</li></ul><div class="price">3500 грн / 1 особа</div><button class="btn" onclick="openBooking('Кам’янець-Подільський', 3500)">Забронювати</button></div></div>
+
+    </div>
+    <div class="panel booking-panel" id="bookingPanel">
+      <div class="section-head">
+        <h2>Форма бронювання</h2>
+        <p>Заповніть дані нижче для розрахунку вартості.</p>
+      </div>
+      <div class="form-grid">
+        <div><label for="tourName">Обраний тур</label><input id="tourName" type="text" readonly></div>
+        <div><label for="tourPrice">Ціна за 1 особу</label><input id="tourPrice" type="number" readonly></div>
+        <div><label for="tourDate">Дата поїздки</label><input id="tourDate" type="date"></div>
+        <div><label for="tourPeople">Кількість осіб</label><input id="tourPeople" type="number" min="1" value="1"></div>
+        <div><label for="tourTransfer">Додатковий трансфер</label><select id="tourTransfer"><option>Ні</option><option>Так</option></select></div>
+      </div>
+      <div style="margin-top:16px;"><button class="btn" onclick="calculateTotal()">Розрахувати вартість</button></div>
+      <div class="result" id="bookingResult"></div>
+      <p class="note">Для груп від 4 осіб автоматично застосовується знижка 10%.</p>
+    </div>
+  </div>
+</section>
+<footer><div class="container footer-wrap"><div>Виконав(ла): [Ваше ПІБ]</div><div>Група: [Ваша група]</div><div>VoyageUA © 2026</div></div></footer>
+<script src="js/script.js"></script>
+</body>
+</html>
